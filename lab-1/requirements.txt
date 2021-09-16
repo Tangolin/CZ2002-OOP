@@ -1,5 +1,4 @@
 argparse
-copy
 numpy
 tqdm
 matplotlib
