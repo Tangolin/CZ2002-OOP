@@ -3,7 +3,7 @@ Lab 1
 In this lab, the individual time complexity analysis of merge-insertion sort and mergesort is required, it will then be followed by a cross-analysis. Both files can compare by key comparisons or CPU time by a few simple changes.
 <br/>
 <br/>
-### Pre-requisities
+### Pre-requisites
 ---
 Run ```pip install -r requirements.txt```
 <br/>
