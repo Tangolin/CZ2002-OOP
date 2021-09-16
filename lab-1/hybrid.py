@@ -123,8 +123,6 @@ if __name__ == '__main__':
             return 'Invalid input'
 
     # time complexity analysis
-    # fig = plt.figure()
-    # ax = plt.axes(projection='3d')
     LENGTHS, CUTOFFS= np.meshgrid(lengths, cutoffs)
     KEYCOMP = []
 
@@ -134,19 +132,8 @@ if __name__ == '__main__':
 
     KEYCOMP = np.array(KEYCOMP).reshape(LENGTHS.shape)
 
-    # ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='viridis', edgecolor='none')
-    # # ax.scatter(X, Y, Z, c=Z, cmap='viridis', linewidth=0.5)
-    # ax.set_xlabel('lengths')
-    # ax.set_ylabel('cutoffs')
-    # ax.set_zlabel('keycomp')
-    # plt.show()
-
     # finding optimal value of S
     min_idx = np.argmin(KEYCOMP, axis=0)
-
-    # min_s = []
-    # for i in range(Y.shape[-1]):
-    #     min_s.append(Y[min_idx[i],i])
     min_s = min_idx + 1
 
     plt.plot(lengths, min_s)
@@ -154,7 +141,7 @@ if __name__ == '__main__':
     with open('state_'+str(args.max)+'_'+str(args.interval)+'_'+args.type+'.json', 'w') as f:
         json.dump(state_dict, f, indent = 4)
 
-    # plt.title('title name')
+    plt.title('Optimal S value against length')
     plt.xlabel('length')
     plt.ylabel('optimal S value')
     plt.savefig('output_'+str(args.max)+'_'+str(args.interval)+'_'+args.type+'.jpg')
