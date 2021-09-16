@@ -2,4 +2,3 @@ argparse
 numpy
 tqdm
 matplotlib
-json
